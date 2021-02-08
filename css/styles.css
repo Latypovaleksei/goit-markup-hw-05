@@ -198,10 +198,9 @@ li {
     url(../images/hero-background.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto;
+  background-size: cover;
   padding-bottom: 200px;
   padding-top: 200px;
-  min-height: 600px;
 }
 
 .section-hero .container {
@@ -461,13 +460,11 @@ li {
 }
 
 /* под-Блок "filters"*/
-.filters {
-  margin-bottom: 50px;
-}
 
 .filters-list {
   display: flex;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .filter-item:not(:last-child) {
@@ -556,6 +553,8 @@ li {
 /* Блок "Подвал" */
 .footer {
   background-color: var(--background-hero-footer);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 a.logo-footer {
@@ -564,12 +563,11 @@ a.logo-footer {
 
 .logo-footer {
   margin-bottom: 20px;
-  padding-top: 60px;
 }
 
 .footer .container {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: flex-start;
 }
 
@@ -583,7 +581,6 @@ a.logo-footer {
 .contacts-footer-list {
   display: flex;
   flex-direction: column;
-  padding-bottom: 60px;
 }
 
 .contacts-footer-item:not(:last-child) {
@@ -610,17 +607,12 @@ a.phone-footer {
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 20px;
-  padding-top: 72px;
 }
 
 .social-footer-list {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.social-footer-list .social-list {
-  padding-bottom: 100px;
 }
 
 .footer-link {
