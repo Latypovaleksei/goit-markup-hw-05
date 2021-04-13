@@ -285,7 +285,6 @@ li {
 .section-features-list {
   display: flex;
   align-items: center;
-  margin-top: 94px;
 }
 
 .box-feature {
@@ -295,6 +294,9 @@ li {
 }
 
 .box-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 270px;
   height: 120px;
   background-color: var(--btn-color);
@@ -305,7 +307,6 @@ li {
 .img-icon {
   width: 70px;
   height: 70px;
-  margin: 25px 100px;
 }
 
 .box-feature:not(:last-child) {
@@ -563,13 +564,9 @@ li {
 .projects-list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.projects-list .project-item {
-  flex-basis: calc(100% / 3 - 30px);
-  margin-bottom: 30px;
+  margin-left: -30px;
+  margin-bottom: -30px;
 }
 
 .box-text-project-item {
@@ -580,9 +577,13 @@ li {
 
 .project-item {
   max-height: 402px;
+  width: 370px;
   border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  flex-basis: calc((100% - 3 * 30px) / 3);
 }
 
 .project-item-link {
