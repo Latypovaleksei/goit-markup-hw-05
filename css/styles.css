@@ -18,6 +18,10 @@
   --hero-linear-gradient: to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4);
   --icon-color: rgba(175, 177, 184, 1);
   --footer-social-link-bg: rgba(255, 255, 255, 0.1);
+  --animation-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
+  --backdrop: rgba(0, 0, 0, 0.2);
+  --border-modal-bt-close: rgba(0, 0, 0, 0.1);
+  --cross-color: rgba(0, 0, 0, 1);
 }
 
 a {
@@ -91,7 +95,6 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* border-bottom: var(--header-border); */
 }
 
 /* блок Логотип */
@@ -128,6 +131,10 @@ header {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .nav-item .nav-link:hover,
@@ -143,6 +150,7 @@ header {
   width: 100%;
   height: 4px;
   background-color: var(--highlighting-color);
+  border-radius: 2px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -159,6 +167,7 @@ header {
   width: 100%;
   height: 4px;
   background-color: var(--highlighting-color);
+  border-radius: 2px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -183,8 +192,9 @@ header {
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
 
-  /* display: flex;
-  align-items: center; */
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .contact-item a:hover,
@@ -197,6 +207,9 @@ header {
 
 .icon {
   fill: var(--secondary-text-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .envelope {
@@ -257,11 +270,65 @@ header {
 
   width: 200px;
   height: 50px;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .bt-hero:hover {
   cursor: pointer;
   background-color: var(--bt-hover);
+}
+
+/* Модальное окно */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop);
+}
+
+.modal {
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-bt-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--border-modal-bt-close);
+  cursor: pointer;
+
+  background-color: var(--main-color);
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: unset;
+}
+
+.modal-bt-close .icon {
+  width: 18px;
+  height: 18px;
+  fill: var(--cross-color);
 }
 
 /* Особенности */
@@ -405,6 +472,20 @@ section.team {
   height: 44px;
   /* padding: 12px; */
   border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
+}
+
+.social-link .icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--icon-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .social-link:hover,
@@ -413,12 +494,6 @@ section.team {
 .social-link:focus .icon {
   background-color: var(--highlighting-color);
   fill: var(--main-color);
-}
-
-.social-link .icon {
-  width: 20px;
-  height: 20px;
-  fill: var(--icon-color);
 }
 
 /* Постоянные клиенты */
@@ -439,12 +514,20 @@ section.team {
   border-radius: 4px;
   width: 170px;
   height: 92px;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .partners-link .icon {
   width: 106px;
   height: 60px;
   fill: var(--icon-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .partners-link:hover,
@@ -481,6 +564,10 @@ section.team {
   color: var(--main-text-color);
 
   padding: 6px 22px;
+
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .filters-item button:hover,
@@ -509,6 +596,10 @@ section.team {
 
 .works-link {
   display: block;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .works-link:hover,
@@ -587,6 +678,10 @@ section.team {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--third-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .address-item a:hover,
@@ -617,10 +712,17 @@ section.team {
 
 .join-box .social-link .icon {
   fill: var(--main-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .join-box .social-link {
   background-color: var(--footer-social-link-bg);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-timing-function);
 }
 
 .join-box .social-link:hover,
